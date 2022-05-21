@@ -1,0 +1,21 @@
+@import "./scss/variable";
+@import "./scss/layout/nav";
+@import "./scss/pages/auth";
+@import "./scss/pages/upload";
+@import "./scss/pages/home";
+@import "./scss/components/buttons";
+@import "./scss/components/carousel";
+// @import "./scss/";
+
+html{
+    width: 100%;   
+    margin: 0 !important;
+}
+body{
+    box-sizing: border-box;
+    
+    .my-contain {
+        margin-left:7.29166667% !important;
+        margin-right:7.29166667% !important;
+    }
+}

@@ -1,0 +1,56 @@
+section {
+    .upload{
+        margin-top:4%;
+        .page-button{
+            text-decoration: none;
+            background-color: $main_colour_dark;
+            padding:10px 22px 10px 22px;
+            border:2px solid $main_colour;
+            height:45px;
+            color:$white_text;
+            width:25px;
+            margin-right: 1%;
+            &:hover{
+                background-color:$main_colour !important;
+                transition:0.2s
+            }
+        }
+    }
+
+    .main-body{
+        margin-top:3%;
+        .right-col{
+            display:flex;
+            flex-direction:column;
+            label{
+                margin-right:1%;
+            }
+            input{
+                border:2px solid $main_colour;
+                width:80%;
+                height:35px;
+                margin-bottom: 1%;
+            }
+            textarea{
+                width:80%;
+                border:2px solid $main_colour;
+                margin-bottom: 1%;
+            }
+            .types{
+                width:80%;
+                padding:10px 25px 10px 17px;
+                border: 2px solid $main_colour;
+                border-radius:0;
+                margin-bottom: 2%;
+            }
+          
+            .from-to{
+                width:25%;
+                padding:10px 25px 10px 17px;
+                border: 2px solid $main_colour;
+                border-radius:0;
+                margin-bottom: 2%;
+            }
+        }
+    }
+}

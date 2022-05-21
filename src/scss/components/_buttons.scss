@@ -1,0 +1,10 @@
+.submit-button{
+    color:$white_text;
+    background-color:$main_colour;
+    padding:10px 25px 10px 17px;
+    width:20%;
+    border:none;
+    &:hover{
+        background-color: #183846;
+    }
+}
