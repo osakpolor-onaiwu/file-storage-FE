@@ -1,18 +1,18 @@
 nav {
-    background-color: $main_colour;
+    background-color: $white_text;
     height: 80px;
     margin-bottom: 0;
     .logo{
-        color:$white_text !important;
+        color:$dark_text !important;
     }
     .nav-links{
         padding: 10px 22px 10px 22px;
         :hover{
-            border-bottom: 2px solid white;
+            border-bottom: 2px solid rgb(28, 27, 27);
             transition: all 0.5
         }
         .navlink-item{
-            color: $white_text;
+            color: $dark_text;
             text-decoration: none;
         }
     }

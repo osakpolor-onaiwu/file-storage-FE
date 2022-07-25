@@ -1,10 +1,17 @@
 @import "./scss/variable";
+@import "./scss/components/select";
+@import "./scss/components/file_input";
 @import "./scss/layout/nav";
 @import "./scss/pages/auth";
+@import "./scss/pages/historys";
 @import "./scss/pages/upload";
 @import "./scss/pages/home";
 @import "./scss/components/buttons";
 @import "./scss/components/carousel";
+@import "./scss/components/spinner";
+
+
+
 // @import "./scss/";
 
 html{
@@ -13,9 +20,23 @@ html{
 }
 body{
     box-sizing: border-box;
-    
+    position: relative;
+    background-color:#F7F8FC;
+    font-weight: 400;
+    font-family:Helvetica, sans-serif;
     .my-contain {
         margin-left:7.29166667% !important;
         margin-right:7.29166667% !important;
+        font-size: 14px;
     }
+    .error {
+        color:rgba(207, 59, 29, 0.869);
+        margin-top: 1% !important;
+    }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }

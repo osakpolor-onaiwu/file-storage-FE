@@ -1,0 +1,42 @@
+#history_table{
+    width: 80% !important;
+    margin-top:2%;
+    th{
+        font-size:14px;
+        font-weight: 700;
+        text-align:center;
+        border-bottom: 1px solid rgb(45, 44, 44);
+    }
+    
+    td{
+        font-size:14px;
+        text-align:center;
+    }
+    
+    tr{
+        height:50px;
+    }
+    
+    .download_button{
+        text-decoration: none;
+        color:white;
+        padding:5px 5px 5px 5px ;
+        background-color:rgb(26, 91, 26);
+        width: 80px;
+        height:45px;
+        margin:0 10px 0 0 !important;
+        border-radius: 2px;
+    }
+    
+    .delete_button{
+        border: none;
+        text-decoration: none;
+        color:white;
+        padding:5px 5px 5px 5px ;
+        width: 80px;
+        height:45px;
+        border-radius: 2px;
+        background-color: rgba(167, 8, 8, 0.743)
+    }
+}
+

@@ -4,15 +4,8 @@ import App from './App';
 import 'bootstrap/dist/css/bootstrap.css';
 import './main.css';
 import './App.css';
-import { legacy_createStore, compose, applyMiddleware } from 'redux';
-import thunk from 'redux-thunk';
-import root_reducer from './redux/reducers/root_reducer'
+import store from '../src/reduxtoolkit/store';
 import { Provider } from 'react-redux'
-
-const store = legacy_createStore(
-  root_reducer,
-  compose(applyMiddleware(thunk.withExtraArgument()))
-)
 
 const container = document.getElementById('root');
 const root = createRoot(container);

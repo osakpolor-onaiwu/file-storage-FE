@@ -1,10 +1,16 @@
 .submit-button{
-    color:$white_text;
-    background-color:$main_colour;
-    padding:10px 25px 10px 17px;
-    width:20%;
-    border:none;
+    text-decoration: none;
+    background-color: rgba(167, 8, 8, 0.743);
+    padding:10px 22px 10px 22px;
+    height:45px;
+    border: none;
+    color:white;
+    width:120px;
+    border-radius: 2px;
+    margin: 2% 1% 0 0;
+
     &:hover{
-        background-color: #183846;
+        background-color:red !important;
+        transition:0.2s
     }
 }

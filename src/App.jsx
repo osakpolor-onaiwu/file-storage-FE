@@ -1,31 +1,41 @@
-import React from 'react'
+import React, {useEffect }from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import { connect } from 'react-redux';
-import Home from './components/pages/home';
-import UploadDoc from './components/pages/upload_doc';
-import UploadImage from './components/pages/upload_image';
-import ConvertImage from './components/pages/convert_image';
-import ConvertDoc from './components/pages/convert_doc';
-import Login from './components/auth/login';
-import Signup from './components/auth/signup'
+import {login, user} from './reduxtoolkit/slices/auth_slice';
+import { useDispatch } from 'react-redux';
+import Login from './componentstoolkit/auth/login';
+import Signup from './componentstoolkit/auth/signup';
+import Home from './componentstoolkit/pages/home';
+import UploadDoc from './componentstoolkit/pages/upload_doc';
+import UploadImage from './componentstoolkit/pages/upload_image';
+import ConvertImage from './componentstoolkit/pages/convert_image';
+import ConvertDoc from './componentstoolkit/pages/convert_doc';
+import History from './componentstoolkit/pages/history';
 
-const App = () => {
+const App = ({loadUser, LoginAction}) => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(user());
+
+    const userDetails = JSON.parse(localStorage.getItem("user details"));
+    dispatch(login(userDetails));
+  }, [])
+  
   return (
     <BrowserRouter>
-      {/* <Navbar /> */}
       <Routes>   
         <Route exact path="/" element={<Home />} />
-        <Route path="/upload/doc" element={<UploadDoc />} />
-        <Route path="/upload/image" element={<UploadImage />} />
-        <Route path="/convert/doc" element={<ConvertDoc />} />
-        <Route path="/convert/image" element={<ConvertImage />} />
-        <Route path="/login" element={<Login />} />
+        <Route exact path="/upload/doc" element={<UploadDoc />} />
+        <Route exact path="/upload/image" element={<UploadImage />} />
+        <Route exact path="/convert/doc" element={<ConvertDoc />} />
+        <Route exact path="/convert/image" element={<ConvertImage />} />
+        <Route exact path="/history" element={<History />} />
+        <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Signup />} />
-        {/* <Route path="/" element={<ConvertDoc />} /> */}
       </Routes>
-        {/* <Footer /> */}
     </BrowserRouter>
   );
 }
 
 export default App;
+

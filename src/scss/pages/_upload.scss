@@ -3,15 +3,16 @@ section {
         margin-top:4%;
         .page-button{
             text-decoration: none;
-            background-color: $main_colour_dark;
+            background-color: rgba(167, 8, 8, 0.743);
             padding:10px 22px 10px 22px;
-            border:2px solid $main_colour;
             height:45px;
-            color:$white_text;
+            color:white;
+            border: none;
             width:25px;
+            border-radius: 2px;
             margin-right: 1%;
             &:hover{
-                background-color:$main_colour !important;
+                background-color:red !important;
                 transition:0.2s
             }
         }
@@ -19,38 +20,53 @@ section {
 
     .main-body{
         margin-top:3%;
-        .right-col{
+        .left-col{
             display:flex;
             flex-direction:column;
-            label{
-                margin-right:1%;
+            form{
+                display:flex;
+                flex-direction:column;
+                label{
+                    margin: 2% 1% 0 0;
+                }
+                input[type="text"],input[type="url"]{
+                    border:thin solid grey;
+                    width:80%;
+                    height:35px;
+                   
+                }
+                textarea{
+                    width:80%;
+                    border:thin solid grey;
+                    margin-bottom: 1%;
+                }
+             
+
+                section{
+                    display:flex;
+                    width: 100%;
+                    height:80px;
+                    justify-content:flex-start;
+                    div{
+                        display:flex;
+                        flex-direction:column;
+                        width: 29%;
+                        margin: 0 2% 0 0;
+                       .from-to{
+                            width: 60%;
+                        }
+                    }
+                }
             }
-            input{
-                border:2px solid $main_colour;
-                width:80%;
-                height:35px;
-                margin-bottom: 1%;
-            }
-            textarea{
-                width:80%;
-                border:2px solid $main_colour;
-                margin-bottom: 1%;
-            }
-            .types{
-                width:80%;
-                padding:10px 25px 10px 17px;
-                border: 2px solid $main_colour;
-                border-radius:0;
-                margin-bottom: 2%;
-            }
+        
+        }
+
+        .right-col{
+            display:flex;
+            justify-content:flex-start;
+            align-items:center;
+            flex-direction:column;
           
-            .from-to{
-                width:25%;
-                padding:10px 25px 10px 17px;
-                border: 2px solid $main_colour;
-                border-radius:0;
-                margin-bottom: 2%;
-            }
         }
     }
 }
