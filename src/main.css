@@ -52,6 +52,53 @@ nav .nav-links .navlink-item {
   text-decoration: none;
 }
 
+main#footer {
+  background-color: white;
+  padding-top: 3%;
+  padding-bottom: 3%;
+  margin-top: 3%;
+}
+main#footer ul {
+  list-style: none;
+  display: flex;
+}
+main#footer ul li {
+  margin: 0 4% 0 0;
+}
+main#footer ul .footer-link {
+  text-decoration: none;
+  margin: 2% 0;
+  color: #333a3f;
+}
+main#footer #socials {
+  margin-left: 4%;
+}
+main#footer .socials {
+  padding-left: 3%;
+}
+main#footer form {
+  display: flex;
+  flex-direction: column;
+}
+main#footer form select {
+  width: 70%;
+  background-image: linear-gradient(45deg, transparent 50%, green 50%), linear-gradient(135deg, green 50%, transparent 50%), linear-gradient(to right, rgb(165, 165, 165), rgb(165, 165, 165));
+  background-position: calc(100% - 20px) calc(1em + 2px), calc(100% - 15px) calc(1em + 2px), 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+}
+main#footer form select:focus {
+  background-image: linear-gradient(45deg, white 50%, transparent 50%), linear-gradient(135deg, transparent 50%, white 50%), linear-gradient(to right, gray, gray);
+  background-position: calc(100% - 15px) 1em, calc(100% - 20px) 1em, 100% 0;
+  background-size: 5px 5px, 5px 5px, 2.5em 2.5em;
+  background-repeat: no-repeat;
+  border-color: grey;
+  outline: 0;
+}
+main#footer form textarea {
+  width: 70%;
+}
+
 .auth-form {
   margin-top: 10%;
   width: 100%;
@@ -64,25 +111,130 @@ nav .nav-links .navlink-item {
   width: 30%;
   height: 45px;
   margin: 0.5% 0 0.5% 0;
-  border: 2px solid #141515;
+  border: thin solid #141515;
 }
 .auth-form button {
   color: #ffffff;
   width: 10%;
   height: 45px;
-  background-color: #141515;
-  border: 1px solid #141515;
+  background-color: rgba(167, 8, 8, 0.743);
+  padding: 10px 22px 10px 22px;
+  border: thin solid;
+}
+
+.history_control {
+  margin-top: 7vh;
+  width: 70vw;
+  border-bottom: thin solid rgba(167, 8, 8, 0.743);
+}
+.history_control button.history_button {
+  width: 10vw;
+  border: none;
+  padding: 5px;
+  background-color: #F7F8FC;
+}
+.history_control button.history_button:hover {
+  border-bottom: thin solid red;
+  padding: 5px;
+}
+
+#filters {
+  margin-top: 3vh;
+  width: 70vw;
+}
+#filters > ul#t-filter {
+  display: flex;
+  width: 100%;
+  position: relative;
+  list-style: none;
+}
+#filters > ul#t-filter li.filter_button {
+  margin-left: 5%;
+  width: 10vw;
+  border: none;
+  padding: 1%;
+  background-color: rgba(167, 8, 8, 0.743);
+  color: white;
+  border-radius: 2px;
+}
+#filters > ul#t-filter li.filter_button:hover {
+  background-color: rgba(180, 49, 13, 0.875);
+}
+#filters > ul#t-filter .dropdown-content {
+  position: absolute;
+  background-color: #ffffff;
+  width: 30vw;
+  list-style: none;
+  padding: 3% 3% 5% 3%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+  border-radius: 1%;
+  display: block;
+  top: 120%;
+  left: 10%;
+  transition: all 2s;
+}
+#filters form.dropdown-form label {
+  margin: 1% 1% 0 0;
+  display: block;
+}
+#filters form.dropdown-form div.text-filter {
+  margin-bottom: 3%;
+  height: 7vh;
+}
+#filters form.dropdown-form div.text-filter > input {
+  height: 76%;
+}
+#filters form.dropdown-form div.timestamp {
+  display: flex;
+  width: 100%;
+}
+#filters form.dropdown-form div.timestamp > div {
+  width: 100%;
+}
+#filters form.dropdown-form div.timestamp > div input {
+  width: 95%;
+  height: 80%;
+}
+#filters form.dropdown-form div.select-div {
+  margin-top: 5%;
+  width: 100%;
+}
+#filters form.dropdown-form div.select-div select {
+  width: 50%;
+}
+#filters form.dropdown-form div.apply-button {
+  display: flex;
+  width: 95%;
+  justify-content: center;
+}
+#filters form.dropdown-form div.apply-button button {
+  margin-top: 8%;
+  width: 10vw;
+  border: none;
+  padding: 1%;
+  background-color: rgba(167, 8, 8, 0.743);
+  color: white;
+  border-radius: 2px;
+  height: 5vh;
+}
+#filters form.dropdown-form div.apply-button button:hover {
+  background-color: rgba(180, 49, 13, 0.875);
+}
+
+#history_table_row > div {
+  height: 70vh;
+  margin-top: 5vh;
 }
 
 #history_table {
-  width: 80% !important;
-  margin-top: 2%;
+  width: 70vw !important;
 }
 #history_table th {
   font-size: 14px;
   font-weight: 700;
   text-align: center;
-  border-bottom: 1px solid rgb(45, 44, 44);
+  background-color: rgba(128, 128, 128, 0.264);
 }
 #history_table td {
   font-size: 14px;
@@ -176,6 +328,10 @@ section .main-body .right-col {
   flex-direction: column;
 }
 
+.home {
+  padding: 7vh 0 15vh 0;
+}
+
 .types-accepted {
   text-align: center;
   margin-bottom: 2%;
@@ -229,8 +385,9 @@ p {
   width: 100%;
   margin-top: 0%;
   margin-bottom: 2%;
-  height: 500px;
+  height: 65vh;
   padding-top: 15%;
+  background-size: 100% 100%;
 }
 .carousel-main h2 .hero-text {
   color: #ffffff;
@@ -313,6 +470,49 @@ p {
     height: 32px;
   }
 }
+div.overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+div.modals {
+  position: fixed;
+  z-index: 20;
+  background: #fff;
+  width: 500px;
+  /* Center the modal */
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+main.modal_main {
+  display: flex;
+  flex-direction: column;
+  padding: 5vh 2vw;
+}
+main.modal_main button {
+  align-self: flex-end;
+  text-decoration: none;
+  background-color: rgba(167, 8, 8, 0.743);
+  padding: 10px 22px 10px 22px;
+  height: 45px;
+  border: none;
+  color: white;
+  width: 120px;
+  border-radius: 2px;
+  margin: 2% 1% 0 0;
+}
+main.modal_main button:hover {
+  background-color: red !important;
+  transition: 0.2s;
+}
+
 html {
   width: 100%;
   margin: 0 !important;

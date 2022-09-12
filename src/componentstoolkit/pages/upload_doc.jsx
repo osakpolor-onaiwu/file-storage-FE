@@ -47,7 +47,10 @@ const Upload_doc = () => {
     if (file) formData.append('file', file);
     dispatch(upload_doc(formData))
       .unwrap()
-      .then()
+      .then(res=>{
+        setState({
+          ...initial_state
+        })})
       .catch(err => {
         setState({
           msg: err.message
@@ -68,9 +71,9 @@ const Upload_doc = () => {
   }
   const { isAuthenticated } = redux_state;
 
-  // if (!isAuthenticated) {
-  //   return <Navigate to="/login" />;
-  // }
+  if (!isAuthenticated) {
+    return <Navigate to="/login" />;
+  }
 
   return (
     <main>
@@ -111,7 +114,7 @@ const Upload_doc = () => {
           <Col lg={6} xs={12} md={7} className='right-col'>
             <div><h2>progress bar go here</h2></div>
             {/* spinner */}
-            <div class="lds-spinner">
+            <div className="lds-spinner">
               <div></div><div></div><div></div>
             </div>
             <h5>Upload in progress</h5>
@@ -119,7 +122,7 @@ const Upload_doc = () => {
         </Row>
       </section>
 
-      {/* <Footer/> */}
+      <Footer/>
     </main>
   )
 }

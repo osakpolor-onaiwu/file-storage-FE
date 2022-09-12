@@ -50,22 +50,23 @@ const Upload_image = (props) => {
                   <select name="type" id="type" className="from-to types" required={true} onChange={handle_change} defaultValue={state.type}>
                     <option value="jpeg">jpeg</option>
                     <option value="png">png</option>
-                    <option value="svg">svg</option>
+                    <option value="bmp">bmp</option>
                   </select>
                 </div>
 
                 <div>
                   <label htmlFor="from">From</label>
                   <select name="from" className="from-to types" id="from" required={true} onChange={handle_change}>
-                    <option value="json">json</option>
-                    <option value="csv">csv</option>
+                    <option value="jpeg">jpeg</option>
+                    <option value="png">png</option>
                   </select>
                 </div>
                 <div>
                   <label htmlFor="to">To</label>
                   <select name="to" className="from-to types" id="to" required={true} onChange={handle_change}>
-                    <option value="json">json</option>
-                    <option value="csv">csv</option>
+                    <option value="jpeg">jpeg</option>
+                    <option value="png">png</option>
+                    <option value="bmp">bmp</option>
                   </select>
                 </div>
 
@@ -85,7 +86,7 @@ const Upload_image = (props) => {
           <Col lg={6} xs={12} md={7} className='right-col'>
             <div><h2>progress bar go here</h2></div>
             {/* spinner */}
-            <div class="lds-spinner">
+            <div className="lds-spinner">
               <div></div><div></div><div></div>
             </div>
             <h5>Upload in progress</h5>
@@ -93,7 +94,7 @@ const Upload_image = (props) => {
         </Row>
       </section>
 
-      {/* <Footer/> */}
+      <Footer/>
     </main>
   )
 }

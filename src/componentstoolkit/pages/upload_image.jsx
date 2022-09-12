@@ -44,7 +44,11 @@ const Upload_image = (props) => {
     if (file) formData.append('file', file);
     dispatch(upload_img(formData))
     .unwrap()
-    .then()
+    .then(res=>{
+      setState({
+        ...initial_state
+      })
+    })
     .catch(err => {
       setState({
         msg: err.message
@@ -105,7 +109,7 @@ const Upload_image = (props) => {
           <Col lg={6} xs={12} md={7} className='right-col'>
             <div><h2>progress bar go here</h2></div>
             {/* spinner */}
-            <div class="lds-spinner">
+            <div className="lds-spinner">
               <div></div><div></div><div></div>
             </div>
             <h5>Upload in progress</h5>
@@ -113,7 +117,7 @@ const Upload_image = (props) => {
         </Row>
       </section>
 
-      {/* <Footer/> */}
+      <Footer/>
     </main>
   )
 }

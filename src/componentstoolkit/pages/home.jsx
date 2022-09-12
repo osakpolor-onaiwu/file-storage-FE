@@ -1,6 +1,6 @@
 import React from 'react'
 import Navigation from '../layout/navbar'
-// import Footer from '../layout/footer'
+import Footer from '../layout/footer'
 import { Navigate } from 'react-router-dom';
 import Carousel from '../misc/carousel'
 import {Row, Col} from 'reactstrap'
@@ -62,7 +62,7 @@ export const Home = (props) => {
         
       </Row>
     </section>
-
+    <Footer/>
     </main>
   )
 }

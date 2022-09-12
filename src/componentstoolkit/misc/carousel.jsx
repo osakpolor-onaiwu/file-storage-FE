@@ -6,7 +6,6 @@ const Carousels = () => {
         <main className='carousel-main' style={{
             backgroundImage: `url(/hero2.png)`,
             backgroundRepeat: 'no-repeat',
-            backgroundSize:'100% 100%'
         }}>
             <h2 className='hero-text'>A file storage util for file uploads and conversion</h2>
          

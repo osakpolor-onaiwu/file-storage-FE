@@ -37,7 +37,6 @@ const Convert_doc = ({ }) => {
   const handle_submit = (e) => {
     e.preventDefault();
     const { from, to, raw_data, url,type, name, file } = state;
-    console.log(state)
     const formData = new FormData();
 
     if (from) formData.append('from', from);
@@ -49,7 +48,10 @@ const Convert_doc = ({ }) => {
     if (file) formData.append('file', file);
     dispatch(convert_doc(formData))
     .unwrap()
-    .then()
+    .then(res=>{
+      setState({
+        ...initial_state
+      })})
     .catch(err => {
       setState({
         msg: err.message
@@ -134,7 +136,7 @@ const Convert_doc = ({ }) => {
           <Col lg={6} xs={12} md={7} className='right-col'>
             <div><h2>progress bar go here</h2></div>
             {/* spinner */}
-            <div class="lds-spinner">
+            <div className="lds-spinner">
               <div></div><div></div><div></div>
             </div>
             <h5>Upload in progress</h5>
@@ -142,7 +144,7 @@ const Convert_doc = ({ }) => {
         </Row>
       </section>
 
-      {/* <Footer/> */}
+      <Footer/>
     </main>
   )
 }

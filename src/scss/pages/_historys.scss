@@ -1,42 +1,166 @@
-#history_table{
-    width: 80% !important;
-    margin-top:2%;
-    th{
-        font-size:14px;
+.history_control {
+    margin-top: 7vh;
+    width: 70vw;
+    border-bottom: thin solid $button_red;
+
+    button.history_button {
+        // margin-right:1vw;
+        width: 10vw;
+        border: none;
+        padding: 5px;
+        background-color: $main_background_colour;
+
+        &:hover {
+            border-bottom: thin solid red;
+            padding: 5px;
+            // background-color:gray;
+        }
+    }
+}
+
+#filters {
+    margin-top: 3vh;
+    width: 70vw;
+
+    >ul#t-filter {
+        display: flex;
+        width: 100%;
+        position: relative;
+        list-style: none;
+
+        li.filter_button {
+            margin-left: 5%;
+            width: 10vw;
+            border: none;
+            padding: 1%;
+            background-color: $button-red;
+            color: white;
+            border-radius: 2px;
+
+            &:hover {
+                background-color: $button-hover-red;
+            }
+        }
+
+        .dropdown-content {
+            position: absolute;
+            background-color: #ffffff;
+            width: 30vw;
+            list-style: none;
+            padding: 3% 3% 5% 3%;
+            box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            border-radius: 1%;
+            display: block;
+            top: 120%;
+            left: 10%;
+            transition: all 2s;
+        }
+
+    }
+
+    form.dropdown-form {
+        label {
+            margin: 1% 1% 0 0;
+            display: block;
+        }
+
+        div.text-filter {
+            margin-bottom: 3%;
+            height:7vh;
+            >input {
+                height: 76%;
+            }
+        }
+
+        div.timestamp {
+            display: flex;
+            width: 100%;
+
+            >div {
+                width: 100%;
+
+                input {
+                    width: 95%;
+                    height: 80%;
+                }
+            }
+        }
+
+        div.select-div{
+            margin-top: 5%;
+            width: 100%;
+            select{
+                width: 50%;
+            }
+        }
+        div.apply-button {
+            display: flex;
+            width: 95%;
+            justify-content: center;
+            button{
+                margin-top:8%;
+                width: 10vw;
+                border: none;
+                padding: 1%;
+                background-color: $button-red;
+                color: white;
+                border-radius: 2px;
+                height: 5vh;
+                &:hover {
+                    background-color:$button-hover-red;
+                }
+            }
+        }
+
+
+      
+    }
+}
+
+#history_table_row>div {
+    height: 70vh;
+    margin-top: 5vh;
+}
+
+#history_table {
+    width: 70vw !important;
+
+    th {
+        font-size: 14px;
         font-weight: 700;
-        text-align:center;
-        border-bottom: 1px solid rgb(45, 44, 44);
+        text-align: center;
+        background-color: rgba(128, 128, 128, 0.264);
     }
-    
-    td{
-        font-size:14px;
-        text-align:center;
+
+    td {
+        font-size: 14px;
+        text-align: center;
     }
-    
-    tr{
-        height:50px;
+
+    tr {
+        height: 50px;
     }
-    
-    .download_button{
+
+    .download_button {
         text-decoration: none;
-        color:white;
-        padding:5px 5px 5px 5px ;
-        background-color:rgb(26, 91, 26);
+        color: white;
+        padding: 5px 5px 5px 5px;
+        background-color: rgb(26, 91, 26);
         width: 80px;
-        height:45px;
-        margin:0 10px 0 0 !important;
+        height: 45px;
+        margin: 0 10px 0 0 !important;
         border-radius: 2px;
     }
-    
-    .delete_button{
+
+    .delete_button {
         border: none;
         text-decoration: none;
-        color:white;
-        padding:5px 5px 5px 5px ;
+        color: white;
+        padding: 5px 5px 5px 5px;
         width: 80px;
-        height:45px;
+        height: 45px;
         border-radius: 2px;
         background-color: rgba(167, 8, 8, 0.743)
     }
 }
-

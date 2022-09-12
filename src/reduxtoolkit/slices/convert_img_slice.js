@@ -16,20 +16,20 @@ export const convert_img = createAsyncThunk('convert/img', (payload, { dispatch,
    if(payload.url === null) delete payload.url;
    if(payload.raw_data === null) delete payload.raw_data;
    if(payload.file === null) delete payload.file;
+
+   const options = {
+    headers: {
+        "Authorization": `Bearer ${localStorage.getItem('token')}`,
+        "Content-Type": "multipart/form-data; boundary=<calculated when request is sent>"
+    },
+    onUploadProgress: (progressEvent) => {
+        const { loaded, total } = progressEvent;
+        let percent = Math.floor((loaded * 100) / total);
+        console.log(`${percent}% ${loaded}kb of ${total}`)
+    }
+}
     return axios
-        .post(`${process.env.REACT_APP_BASEURL}/img/convert`, payload,{
-            headers: {
-                "Authorization": `Bearer ${localStorage.getItem('token')}`,
-                "Content-Type": "multipart/form-data; boundary=<calculated when request is sent>"
-            },
-            // onUploadProgress: (p) =>{
-            //     const percentage_completed = Math.round((p.loaded * 100) / p.total);
-            //     initialState({
-            //         data_uploaded:payload,
-            //         percentage_completed:percentage_completed
-            //     })
-            // }
-        })
+        .post(`${process.env.REACT_APP_BASEURL}/img/convert`, payload, options)
         .then(res => {}).catch(e => {
             return rejectWithValue(e.response.data)
         })
